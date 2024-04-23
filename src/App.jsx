@@ -5,8 +5,6 @@ import { useState } from "react";
 // import smallRupeeIcon from "./assets/small_rupee.svg";
 // import largeRupeeIcon from "./assets/large_rupee.svg";
 
-import "./App.css";
-
 function App() {
 	return <></>;
 }
