@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 // import assets
 // import editIcon from "./assets/edit.svg";
 // import homeIcon from "./assets/home.svg";
