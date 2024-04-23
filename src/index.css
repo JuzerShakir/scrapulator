@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* fonts styling */
 .roboto-condensed-bold {
 	font-family: "Roboto Condensed", sans-serif;
 	font-optical-sizing: auto;
