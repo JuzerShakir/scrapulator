@@ -3,22 +3,20 @@
 // import editIcon from "./assets/edit.svg";
 // import homeIcon from "./assets/home.svg";
 import smallRupeeIcon from "./assets/small_rupee.svg";
-// import largeRupeeIcon from "./assets/large_rupee.svg";
+import largeRupeeIcon from "./assets/large_rupee.svg";
 
 function App() {
 	return (
 		<>
 			<Header />
-			<main className="flex flex-col">
-				<ScrapItems />
-			</main>
+			<ScrapItems />
 		</>
 	);
 }
 
 function Header() {
 	return (
-		<header className="">
+		<header>
 			<h1 className="patrick-hand-sc-regular text-5xl text-yellow-700">
 				Scrapulator
 			</h1>
@@ -28,7 +26,10 @@ function Header() {
 
 function ScrapItems() {
 	return (
-		<section id="scrapItems" className="flex flex-col gap-5 px-6">
+		<main
+			id="scrapItems"
+			className="grow flex flex-col justify-center gap-5 px-6"
+		>
 			{/* plastic */}
 			<Item name="plastic" />
 			<Item name="cardboard" />
@@ -36,7 +37,7 @@ function ScrapItems() {
 			<Item name="steel" />
 			<Item name="iron" />
 			<Item name="german" />
-		</section>
+		</main>
 	);
 }
 
@@ -65,7 +66,7 @@ function Item(props) {
 
 			{/* amount */}
 			<div className="flex gap-x-1">
-				<img src={smallRupeeIcon} className="" alt="rupee icon" />
+				<img src={smallRupeeIcon} alt="rupee icon" />
 				<strong className="patrick-hand-regular text-2xl text-yellow-700">
 					15
 				</strong>
