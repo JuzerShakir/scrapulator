@@ -5,6 +5,8 @@
 import smallRupeeIcon from "./assets/small_rupee.svg";
 import largeRupeeIcon from "./assets/large_rupee.svg";
 
+const scrapItems = ["plastic", "cardboard", "paper", "steel", "iron", "german"];
+
 function App() {
 	return (
 		<>
@@ -31,13 +33,9 @@ function ScrapItems() {
 			id="scrapItems"
 			className="grow flex flex-col justify-center gap-5 px-6"
 		>
-			{/* plastic */}
-			<Item name="plastic" />
-			<Item name="cardboard" />
-			<Item name="paper" />
-			<Item name="steel" />
-			<Item name="iron" />
-			<Item name="german" />
+			{scrapItems.map((item) => (
+				<Item name={item} key={item} />
+			))}
 		</main>
 	);
 }
