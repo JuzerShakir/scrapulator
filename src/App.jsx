@@ -59,7 +59,7 @@ function Item(props) {
 					type="number"
 					id={props.name}
 					name={props.name}
-					className="bg-amber-100 w-10 text-center"
+					className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
 					placeholder="0"
 				></input>
 				<strong className="font-light">kgs</strong>
