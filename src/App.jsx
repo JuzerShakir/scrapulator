@@ -29,20 +29,22 @@ function Header() {
 
 function ScrapItems() {
 	return (
-		<main
-			id="scrapItems"
-			className="grow flex flex-col justify-center gap-5 px-6"
-		>
-			{scrapItems.map((item) => (
-				<Item name={item} key={item} />
-			))}
+		<main>
+			<ul
+				id="scrapItems"
+				className="grow flex flex-col justify-center gap-5 px-6"
+			>
+				{scrapItems.map((item) => (
+					<Item name={item} key={item} />
+				))}
+			</ul>
 		</main>
 	);
 }
 
 function Item(props) {
 	return (
-		<div className="flex justify-end gap-10">
+		<li className="flex justify-end gap-10">
 			{/* title */}
 			<label
 				htmlFor={props.name}
@@ -52,7 +54,7 @@ function Item(props) {
 			</label>
 
 			{/* weight input */}
-			<div className="flex gap-x-1 items-center">
+			<span className="flex gap-x-1 items-center">
 				<input
 					type="number"
 					id={props.name}
@@ -61,16 +63,16 @@ function Item(props) {
 					placeholder="0"
 				></input>
 				<strong className="font-light">kgs</strong>
-			</div>
+			</span>
 
 			{/* amount */}
-			<div className="flex gap-x-1 items-center">
+			<span className="flex gap-x-1 items-center">
 				<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
 				<strong className="patrick-hand-regular text-3xl text-yellow-700">
 					15
 				</strong>
-			</div>
-		</div>
+			</span>
+		</li>
 	);
 }
 
