@@ -10,6 +10,7 @@ function App() {
 		<>
 			<Header />
 			<ScrapItems />
+			<GrandTotal />
 		</>
 	);
 }
@@ -72,6 +73,17 @@ function Item(props) {
 				</strong>
 			</div>
 		</div>
+	);
+}
+
+function GrandTotal() {
+	return (
+		<section className="flex justify-center items-center mb-5">
+			<img src={largeRupeeIcon} alt="rupee icon" />
+			<strong className="patrick-hand-regular text-7xl text-green-800">
+				220
+			</strong>
+		</section>
 	);
 }
 
