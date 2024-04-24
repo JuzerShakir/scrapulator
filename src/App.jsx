@@ -42,23 +42,18 @@ function ScrapItems() {
 	);
 }
 
-function Item(props) {
+function Item({ name }) {
 	return (
 		<li className="flex justify-end gap-10">
 			{/* title */}
-			<label
-				htmlFor={props.name}
-				className="patrick-hand-regular text-3xl text-green-900"
-			>
-				{props.name}
-			</label>
+			<ItemName name={name} />
 
 			{/* weight input */}
 			<span className="flex gap-x-1 items-center">
 				<input
 					type="number"
-					id={props.name}
-					name={props.name}
+					id={name}
+					name={name}
 					className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
 					placeholder="0"
 				></input>
@@ -73,6 +68,17 @@ function Item(props) {
 				</strong>
 			</span>
 		</li>
+	);
+}
+
+function ItemName({ name }) {
+	return (
+		<label
+			htmlFor={name}
+			className="patrick-hand-regular text-3xl text-green-900"
+		>
+			{name}
+		</label>
 	);
 }
 
