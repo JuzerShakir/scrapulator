@@ -18,7 +18,7 @@ function App() {
 function Header() {
 	return (
 		<header>
-			<h1 className="patrick-hand-sc-regular text-5xl text-yellow-700">
+			<h1 className="patrick-hand-sc-regular text-6xl text-yellow-700">
 				Scrapulator
 			</h1>
 		</header>
@@ -48,7 +48,7 @@ function Item(props) {
 			{/* title */}
 			<label
 				htmlFor={props.name}
-				className="patrick-hand-regular text-2xl text-green-900"
+				className="patrick-hand-regular text-3xl text-green-900"
 			>
 				{props.name}
 			</label>
@@ -66,9 +66,9 @@ function Item(props) {
 			</div>
 
 			{/* amount */}
-			<div className="flex gap-x-1">
-				<img src={smallRupeeIcon} alt="rupee icon" />
-				<strong className="patrick-hand-regular text-2xl text-yellow-700">
+			<div className="flex gap-x-1 items-center">
+				<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
+				<strong className="patrick-hand-regular text-3xl text-yellow-700">
 					15
 				</strong>
 			</div>
