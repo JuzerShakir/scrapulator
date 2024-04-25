@@ -56,7 +56,7 @@ function Item({ name, amount }) {
 			<ItemName name={name} />
 
 			{/* weight input */}
-			<span className="flex gap-x-1 items-center">
+			<form className="flex gap-x-1 items-center">
 				<input
 					type="number"
 					id={name}
@@ -65,7 +65,7 @@ function Item({ name, amount }) {
 					placeholder="0"
 				></input>
 				<strong className="font-light">kgs</strong>
-			</span>
+			</form>
 
 			{/* amount */}
 			<span className="w-16 flex gap-x-1 items-center">
