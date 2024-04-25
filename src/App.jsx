@@ -68,7 +68,7 @@ function Item({ name, amount }) {
 			</span>
 
 			{/* amount */}
-			<span className="flex gap-x-1 items-center">
+			<span className="w-16 flex gap-x-1 items-center">
 				<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
 				<strong className="patrick-hand-regular text-3xl text-yellow-700">
 					{amount}
