@@ -91,7 +91,7 @@ function ItemName({ name }) {
 
 function GrandTotal() {
 	return (
-		<section className="flex justify-center items-center mb-5">
+		<section className="flex">
 			<img src={largeRupeeIcon} alt="rupee icon" />
 			<strong className="patrick-hand-regular text-7xl text-green-800">
 				220
