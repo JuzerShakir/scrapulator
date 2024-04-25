@@ -21,11 +21,11 @@ function App() {
 		0
 	);
 
-	function handleItemPrice(id, input_value) {
+	function handleItemEarnings(id, weight) {
 		setItems((items) =>
 			items.map((item) =>
 				item.id === id
-					? { ...item, earnings: input_value * item.earningPerKg }
+					? { ...item, earnings: weight * item.earningPerKg }
 					: item
 			)
 		);
@@ -34,7 +34,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			<ScrapItems items={items} onHandleItemPrice={handleItemPrice} />
+			<ScrapItems items={items} onHandleItemEarnings={handleItemEarnings} />
 			<GrandTotal totalEarnings={newTotalEarnings} />
 		</>
 	);
@@ -50,7 +50,7 @@ function Header() {
 	);
 }
 
-function ScrapItems({ items, onHandleItemPrice }) {
+function ScrapItems({ items, onHandleItemEarnings }) {
 	return (
 		<main>
 			<ul
@@ -61,7 +61,7 @@ function ScrapItems({ items, onHandleItemPrice }) {
 					<Item
 						key={item.id}
 						item={item}
-						onHandleItemPrice={onHandleItemPrice}
+						onHandleItemEarnings={onHandleItemEarnings}
 					/>
 				))}
 			</ul>
@@ -69,7 +69,7 @@ function ScrapItems({ items, onHandleItemPrice }) {
 	);
 }
 
-function Item({ item, onHandleItemPrice }) {
+function Item({ item, onHandleItemEarnings }) {
 	return (
 		<li className="flex justify-end gap-10">
 			<form className="flex gap-10" onSubmit={(e) => e.preventDefault()}>
@@ -84,7 +84,7 @@ function Item({ item, onHandleItemPrice }) {
 						name={item.name}
 						className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
 						placeholder="0"
-						onChange={(e) => onHandleItemPrice(item.id, e.target.value)}
+						onChange={(e) => onHandleItemEarnings(item.id, e.target.value)}
 					></input>
 					<strong className="font-light">kgs</strong>
 				</span>
