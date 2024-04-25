@@ -16,6 +16,10 @@ const scrapItems = [
 
 function App() {
 	const [items, setItems] = useState(scrapItems);
+	const newTotalEarnings = items.reduce(
+		(accumulator, item) => accumulator + item.earnings,
+		0
+	);
 
 	function handleItemPrice(id, input_value) {
 		setItems((items) =>
@@ -31,7 +35,7 @@ function App() {
 		<>
 			<Header />
 			<ScrapItems items={items} onHandleItemPrice={handleItemPrice} />
-			<GrandTotal />
+			<GrandTotal totalEarnings={newTotalEarnings} />
 		</>
 	);
 }
@@ -108,12 +112,12 @@ function ItemName({ name }) {
 	);
 }
 
-function GrandTotal() {
+function GrandTotal({ totalEarnings }) {
 	return (
 		<section className="flex">
 			<img src={largeRupeeIcon} alt="rupee icon" />
 			<strong className="patrick-hand-regular text-7xl text-green-800">
-				220
+				{totalEarnings}
 			</strong>
 		</section>
 	);
