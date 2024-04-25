@@ -78,8 +78,8 @@ function ScrapItems({ items, onHandleItemEarnings }) {
 
 function Item({ item, onHandleItemEarnings }) {
 	return (
-		<li className="flex justify-end gap-10">
-			<form className="flex gap-10" onSubmit={(e) => e.preventDefault()}>
+		<li className="flex justify-end gap-7">
+			<form className="flex gap-7" onSubmit={(e) => e.preventDefault()}>
 				{/* title */}
 				<ItemName name={item.name} />
 
@@ -98,7 +98,7 @@ function Item({ item, onHandleItemEarnings }) {
 			</form>
 
 			{/* earnings */}
-			<span className="w-16 flex gap-x-1 items-center">
+			<span className="w-16 flex items-center">
 				<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
 				<strong className="patrick-hand-regular text-3xl text-yellow-700">
 					{item.earnings}
