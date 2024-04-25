@@ -4,6 +4,25 @@ import { useState } from "react";
 // import homeIcon from "./assets/home.svg";
 import smallRupeeIcon from "./assets/small_rupee.svg";
 import largeRupeeIcon from "./assets/large_rupee.svg";
+import PropTypes from "prop-types";
+
+ScrapItems.propTypes = {
+	items: PropTypes.array.isRequired,
+	onHandleItemEarnings: PropTypes.func.isRequired,
+};
+
+Item.propTypes = {
+	item: PropTypes.object.isRequired,
+	onHandleItemEarnings: PropTypes.func.isRequired,
+};
+
+ItemName.propTypes = {
+	name: PropTypes.string.isRequired,
+};
+
+GrandTotal.propTypes = {
+	totalEarnings: PropTypes.number.isRequired,
+};
 
 const scrapItems = [
 	{ id: 1, name: "plastic", earningPerKg: 15, earnings: 0 },
