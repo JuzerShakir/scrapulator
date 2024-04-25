@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 // import assets
 // import editIcon from "./assets/edit.svg";
 // import homeIcon from "./assets/home.svg";
@@ -6,19 +6,31 @@ import smallRupeeIcon from "./assets/small_rupee.svg";
 import largeRupeeIcon from "./assets/large_rupee.svg";
 
 const scrapItems = [
-	{ id: 1, name: "plastic", price_per_kg: 15, amount: 0 },
-	{ id: 2, name: "cardboard", price_per_kg: 8, amount: 0 },
-	{ id: 3, name: "paper", price_per_kg: 10, amount: 0 },
-	{ id: 4, name: "steel", price_per_kg: 40, amount: 0 },
-	{ id: 5, name: "iron", price_per_kg: 30, amount: 0 },
-	{ id: 6, name: "german", price_per_kg: 120, amount: 0 },
+	{ id: 1, name: "plastic", earningPerKg: 15, earnings: 0 },
+	{ id: 2, name: "cardboard", earningPerKg: 8, earnings: 0 },
+	{ id: 3, name: "paper", earningPerKg: 10, earnings: 0 },
+	{ id: 4, name: "steel", earningPerKg: 40, earnings: 0 },
+	{ id: 5, name: "iron", earningPerKg: 30, earnings: 0 },
+	{ id: 6, name: "german", earningPerKg: 120, earnings: 0 },
 ];
 
 function App() {
+	const [items, setItems] = useState(scrapItems);
+
+	function handleItemPrice(id, input_value) {
+		setItems((items) =>
+			items.map((item) =>
+				item.id === id
+					? { ...item, earnings: input_value * item.earningPerKg }
+					: item
+			)
+		);
+	}
+
 	return (
 		<>
 			<Header />
-			<ScrapItems />
+			<ScrapItems items={items} onHandleItemPrice={handleItemPrice} />
 			<GrandTotal />
 		</>
 	);
@@ -34,44 +46,51 @@ function Header() {
 	);
 }
 
-function ScrapItems() {
+function ScrapItems({ items, onHandleItemPrice }) {
 	return (
 		<main>
 			<ul
 				id="scrapItems"
 				className="grow flex flex-col justify-center gap-5 px-6"
 			>
-				{scrapItems.map((item) => (
-					<Item name={item.name} key={item.id} amount={item.amount} />
+				{items.map((item) => (
+					<Item
+						key={item.id}
+						item={item}
+						onHandleItemPrice={onHandleItemPrice}
+					/>
 				))}
 			</ul>
 		</main>
 	);
 }
 
-function Item({ name, amount }) {
+function Item({ item, onHandleItemPrice }) {
 	return (
 		<li className="flex justify-end gap-10">
-			{/* title */}
-			<ItemName name={name} />
+			<form className="flex gap-10" onSubmit={(e) => e.preventDefault()}>
+				{/* title */}
+				<ItemName name={item.name} />
 
-			{/* weight input */}
-			<form className="flex gap-x-1 items-center">
-				<input
-					type="number"
-					id={name}
-					name={name}
-					className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
-					placeholder="0"
-				></input>
-				<strong className="font-light">kgs</strong>
+				{/* weight input */}
+				<span className="flex gap-x-1 items-center">
+					<input
+						type="number"
+						id={item.name}
+						name={item.name}
+						className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
+						placeholder="0"
+						onChange={(e) => onHandleItemPrice(item.id, e.target.value)}
+					></input>
+					<strong className="font-light">kgs</strong>
+				</span>
 			</form>
 
-			{/* amount */}
+			{/* earnings */}
 			<span className="w-16 flex gap-x-1 items-center">
 				<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
 				<strong className="patrick-hand-regular text-3xl text-yellow-700">
-					{amount}
+					{item.earnings}
 				</strong>
 			</span>
 		</li>
