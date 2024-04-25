@@ -14,10 +14,14 @@ const scrapItems = [
 	{ id: 6, name: "german", earningPerKg: 120, earnings: 0 },
 ];
 
+function roundToNearestTenth(number) {
+	return Math.round(number * 10) / 10;
+}
+
 function App() {
 	const [items, setItems] = useState(scrapItems);
 	const newTotalEarnings = items.reduce(
-		(accumulator, item) => accumulator + item.earnings,
+		(accumulator, item) => roundToNearestTenth(accumulator + item.earnings),
 		0
 	);
 
@@ -25,7 +29,10 @@ function App() {
 		setItems((items) =>
 			items.map((item) =>
 				item.id === id
-					? { ...item, earnings: weight * item.earningPerKg }
+					? {
+							...item,
+							earnings: roundToNearestTenth(weight * item.earningPerKg),
+					  }
 					: item
 			)
 		);
