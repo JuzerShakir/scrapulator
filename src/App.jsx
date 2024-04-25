@@ -5,7 +5,14 @@
 import smallRupeeIcon from "./assets/small_rupee.svg";
 import largeRupeeIcon from "./assets/large_rupee.svg";
 
-const scrapItems = ["plastic", "cardboard", "paper", "steel", "iron", "german"];
+const scrapItems = [
+	{ id: 1, name: "plastic", price_per_kg: 15, amount: 0 },
+	{ id: 2, name: "cardboard", price_per_kg: 8, amount: 0 },
+	{ id: 3, name: "paper", price_per_kg: 10, amount: 0 },
+	{ id: 4, name: "steel", price_per_kg: 40, amount: 0 },
+	{ id: 5, name: "iron", price_per_kg: 30, amount: 0 },
+	{ id: 6, name: "german", price_per_kg: 120, amount: 0 },
+];
 
 function App() {
 	return (
@@ -35,14 +42,14 @@ function ScrapItems() {
 				className="grow flex flex-col justify-center gap-5 px-6"
 			>
 				{scrapItems.map((item) => (
-					<Item name={item} key={item} />
+					<Item name={item.name} key={item.id} amount={item.amount} />
 				))}
 			</ul>
 		</main>
 	);
 }
 
-function Item({ name }) {
+function Item({ name, amount }) {
 	return (
 		<li className="flex justify-end gap-10">
 			{/* title */}
@@ -64,7 +71,7 @@ function Item({ name }) {
 			<span className="flex gap-x-1 items-center">
 				<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
 				<strong className="patrick-hand-regular text-3xl text-yellow-700">
-					15
+					{amount}
 				</strong>
 			</span>
 		</li>
