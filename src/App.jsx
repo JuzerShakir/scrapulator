@@ -110,6 +110,7 @@ function Item({ item, onHandleItemEarnings }) {
 						name={item.name}
 						className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
 						placeholder="0"
+						min="0"
 						onChange={(e) => onHandleItemEarnings(item.id, e.target.value)}
 					></input>
 					<strong className="font-light">kgs</strong>
