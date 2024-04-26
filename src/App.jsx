@@ -45,6 +45,9 @@ function App() {
 	);
 
 	function handleItemEarnings(id, weight) {
+		// rescue against negative values
+		if (weight < 0) return;
+
 		setItems((items) =>
 			items.map((item) =>
 				item.id === id
@@ -110,6 +113,8 @@ function Item({ item, onHandleItemEarnings }) {
 						name={item.name}
 						className="bg-amber-100 w-10 text-end text-amber-900 pr-1"
 						placeholder="0"
+						min="0"
+						step="0.1"
 						onChange={(e) => onHandleItemEarnings(item.id, e.target.value)}
 					></input>
 					<strong className="font-light">kgs</strong>
