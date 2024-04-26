@@ -45,6 +45,9 @@ function App() {
 	);
 
 	function handleItemEarnings(id, weight) {
+		// rescue against negative values
+		if (weight < 0) return;
+
 		setItems((items) =>
 			items.map((item) =>
 				item.id === id
