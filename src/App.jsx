@@ -65,6 +65,7 @@ function App() {
 			<Header />
 			<ScrapItems items={items} onHandleItemEarnings={handleItemEarnings} />
 			<GrandTotal totalEarnings={newTotalEarnings} />
+			<Footer />
 		</>
 	);
 }
@@ -182,6 +183,16 @@ function GrandTotal({ totalEarnings }) {
 				{totalEarnings}
 			</strong>
 		</section>
+	);
+}
+
+function Footer() {
+	return (
+		<footer className="mb-2">
+			<copy className="roboto-condensed-light-italic text-xs md:text-sm tracking-wider md:tracking-wide">
+				&copy; 2024 Created with ❤️ by Juzer Shakir
+			</copy>
+		</footer>
 	);
 }
 
