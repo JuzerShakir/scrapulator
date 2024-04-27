@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 /* fonts styling */
-.roboto-condensed-bold {
+.roboto-condensed-normal {
 	font-family: "Roboto Condensed", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: 700;
+	font-weight: 300;
 	font-style: normal;
+}
+
+.roboto-condensed-light-italic {
+	font-family: "Roboto Condensed", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 200;
+	font-style: italic;
 }
 
 .patrick-hand-sc-regular {
