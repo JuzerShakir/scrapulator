@@ -148,7 +148,7 @@ function Item({ item, onHandleItemEarnings }) {
 						step="0.1"
 						onChange={(e) => onHandleItemEarnings(item.id, e.target.value)}
 					></input>
-					<strong className="font-light">kgs</strong>
+					<strong className="roboto-condensed-normal">kgs</strong>
 				</span>
 			</form>
 

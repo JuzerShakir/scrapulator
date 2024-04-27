@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 /* fonts styling */
-.roboto-condensed-bold {
+.roboto-condensed-normal {
 	font-family: "Roboto Condensed", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: 700;
+	font-weight: 300;
 	font-style: normal;
 }
 
