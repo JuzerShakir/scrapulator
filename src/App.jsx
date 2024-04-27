@@ -142,7 +142,7 @@ function Item({ item, onHandleItemEarnings }) {
 						type="number"
 						id={item.name}
 						name={item.name}
-						className="bg-amber-100 w-10 text-end text-amber-900 pr-1 border-b-2 border-yellow-600 focus:border-yellow-900 focus:outline-none"
+						className="nunito-sans-semibold bg-amber-100 w-10 text-end text-amber-900 pr-1 border-b-2 border-yellow-600 focus:border-yellow-900 focus:outline-none"
 						placeholder="0"
 						min="0"
 						step="0.1"
