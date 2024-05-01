@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import smallRupeeIcon from "./../../assets/small_rupee.svg";
+import { roundToNearestTenth } from "../../roundToNearestTenth";
 
 ScrapItems.propTypes = {
 	items: PropTypes.array.isRequired,
-	onHandleItemEarnings: PropTypes.func.isRequired,
+	setItems: PropTypes.func.isRequired,
 };
 
 Item.propTypes = {
@@ -15,7 +16,23 @@ ItemName.propTypes = {
 	name: PropTypes.string.isRequired,
 };
 
-export default function ScrapItems({ items, onHandleItemEarnings }) {
+export default function ScrapItems({ items, setItems }) {
+	function handleItemEarnings(id, weight) {
+		// rescue against negative values
+		if (weight < 0) return;
+
+		setItems((items) =>
+			items.map((item) =>
+				item.id === id
+					? {
+							...item,
+							earnings: roundToNearestTenth(weight * item.earningPerKg),
+					  }
+					: item
+			)
+		);
+	}
+
 	return (
 		<main>
 			<ul
@@ -26,7 +43,7 @@ export default function ScrapItems({ items, onHandleItemEarnings }) {
 					<Item
 						key={item.id}
 						item={item}
-						onHandleItemEarnings={onHandleItemEarnings}
+						onHandleItemEarnings={handleItemEarnings}
 					/>
 				))}
 			</ul>

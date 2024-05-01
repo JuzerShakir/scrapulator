@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
 import largeRupeeIcon from "./../../assets/large_rupee.svg";
+import { roundToNearestTenth } from "../../roundToNearestTenth";
 
 GrandTotal.propTypes = {
-	totalEarnings: PropTypes.number.isRequired,
+	items: PropTypes.array.isRequired,
 };
 
-export default function GrandTotal({ totalEarnings }) {
+export default function GrandTotal({ items }) {
+	const totalEarnings = items.reduce(
+		(accumulator, item) => roundToNearestTenth(accumulator + item.earnings),
+		0
+	);
+
 	return (
 		<section className="flex">
 			<img src={largeRupeeIcon} alt="rupee icon" />
