@@ -3,10 +3,10 @@ import { useState } from "react";
 // import editIcon from "./assets/edit.svg";
 // import homeIcon from "./assets/home.svg";
 // components
-import Header from "./Header";
-import ScrapItems from "./ScrapItems";
-import GrandTotal from "./GrandTotal";
-import Footer from "./Footer";
+import Header from "./components/Header";
+import ScrapItems from "./components/ScrapItems";
+import GrandTotal from "./components/GrandTotal";
+import Footer from "./components/Footer";
 
 const scrapItems = [
 	{ id: 1, name: "plastic", earningPerKg: 15, earnings: 0 },
