@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Header from "./../components/Edit/Header";
 import ScrapItems from "../components/Edit/ScrapItems";
+import Footer from "./../components/Footer";
 import { scrapItemsList } from "../scrapItemsList";
 
 function Edit() {
@@ -11,6 +12,7 @@ function Edit() {
 		<>
 			<Header />
 			<ScrapItems items={items} setItems={setItems} />
+			<Footer />
 		</>
 	);
 }
