@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "./../components/HomePage/Header";
 import ScrapItems from "./../components/HomePage/ScrapItems";
 import GrandTotal from "./../components/HomePage/GrandTotal";
-import Footer from "./../components/HomePage/Footer";
+import Footer from "./../components/Footer";
 import { scrapItemsList } from "../scrapItemsList";
 
 function HomePage() {
