@@ -6,6 +6,7 @@ import { useState } from "react";
 import Header from "./Header";
 import ScrapItems from "./ScrapItems";
 import GrandTotal from "./GrandTotal";
+import Footer from "./Footer";
 
 const scrapItems = [
 	{ id: 1, name: "plastic", earningPerKg: 15, earnings: 0 },
@@ -50,16 +51,6 @@ function App() {
 			<GrandTotal totalEarnings={newTotalEarnings} />
 			<Footer />
 		</>
-	);
-}
-
-function Footer() {
-	return (
-		<footer className="mb-2">
-			<copy className="roboto-condensed-light-italic text-xs md:text-sm tracking-wider md:tracking-wide">
-				&copy; 2024 Created with ❤️ by Juzer Shakir
-			</copy>
-		</footer>
 	);
 }
 
