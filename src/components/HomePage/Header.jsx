@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ShowIcon from "../ShowIcon";
-import editIcon from "./../assets/edit.svg";
+import editIcon from "./../../assets/edit.svg";
 
 export default function Header() {
 	return (

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import smallRupeeIcon from "./../assets/small_rupee.svg";
+import smallRupeeIcon from "./../../assets/small_rupee.svg";
 
 ScrapItems.propTypes = {
 	items: PropTypes.array.isRequired,

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import largeRupeeIcon from "./../assets/large_rupee.svg";
+import largeRupeeIcon from "./../../assets/large_rupee.svg";
 
 GrandTotal.propTypes = {
 	totalEarnings: PropTypes.number.isRequired,
