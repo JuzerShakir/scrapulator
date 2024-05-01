@@ -12,10 +12,6 @@ Item.propTypes = {
 	onHandleItemEarnings: PropTypes.func.isRequired,
 };
 
-ItemName.propTypes = {
-	name: PropTypes.string.isRequired,
-};
-
 export default function ScrapItems({ items, setItems }) {
 	function handleItemEarnings(id, weight) {
 		// rescue against negative values
@@ -56,7 +52,12 @@ function Item({ item, onHandleItemEarnings }) {
 		<li className="flex justify-end gap-7">
 			<form className="flex gap-7" onSubmit={(e) => e.preventDefault()}>
 				{/* title */}
-				<ItemName name={item.name} />
+				<label
+					htmlFor={item.name}
+					className="patrick-hand-regular text-3xl text-green-900"
+				>
+					{item.name}
+				</label>
 
 				{/* weight input */}
 				<span className="flex gap-x-1 items-center">
@@ -82,16 +83,5 @@ function Item({ item, onHandleItemEarnings }) {
 				</strong>
 			</span>
 		</li>
-	);
-}
-
-function ItemName({ name }) {
-	return (
-		<label
-			htmlFor={name}
-			className="patrick-hand-regular text-3xl text-green-900"
-		>
-			{name}
-		</label>
 	);
 }
