@@ -2,15 +2,10 @@ import { useState } from "react";
 // import assets
 // import editIcon from "./assets/edit.svg";
 // import homeIcon from "./assets/home.svg";
-import largeRupeeIcon from "./assets/large_rupee.svg";
-import PropTypes from "prop-types";
 // components
 import Header from "./Header";
 import ScrapItems from "./ScrapItems";
-
-GrandTotal.propTypes = {
-	totalEarnings: PropTypes.number.isRequired,
-};
+import GrandTotal from "./GrandTotal";
 
 const scrapItems = [
 	{ id: 1, name: "plastic", earningPerKg: 15, earnings: 0 },
@@ -55,17 +50,6 @@ function App() {
 			<GrandTotal totalEarnings={newTotalEarnings} />
 			<Footer />
 		</>
-	);
-}
-
-function GrandTotal({ totalEarnings }) {
-	return (
-		<section className="flex">
-			<img src={largeRupeeIcon} alt="rupee icon" />
-			<strong className="patrick-hand-regular text-7xl text-green-800">
-				{totalEarnings}
-			</strong>
-		</section>
 	);
 }
 
