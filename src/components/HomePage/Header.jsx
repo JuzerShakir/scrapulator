@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ShowIcon from "../ShowIcon";
 import editIcon from "./../assets/edit.svg";
 
 export default function Header() {
@@ -12,9 +13,7 @@ export default function Header() {
 					<SubHeading />
 				</h2>
 			</header>
-			<aside className="w-1/4 self-end">
-				<EditIcon />
-			</aside>
+			<aside className="w-1/4 self-end">{ShowIcon(editIcon, "edit")}</aside>
 		</>
 	);
 }
@@ -45,14 +44,4 @@ function SubHeading() {
 	});
 
 	return subHeadings[currentSubheadingIndex];
-}
-
-function EditIcon() {
-	return (
-		<img
-			src={editIcon}
-			alt="edit"
-			className="w-7 md:w-9 lg:w-11 cursor-pointer"
-		/>
-	);
 }
