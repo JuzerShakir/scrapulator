@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import assets
-// import editIcon from "./assets/edit.svg";
 // import homeIcon from "./assets/home.svg";
 // components
 import Header from "./components/Header";

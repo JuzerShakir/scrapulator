@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
+import editIcon from "./../assets/edit.svg";
 
 export default function Header() {
 	return (
-		<header className="flex flex-col items-center gap-1 w-full">
-			<h1 className="patrick-hand-sc-regular text-6xl text-yellow-700">
-				Scrapulator
-			</h1>
-			<h2 className="patrick-hand-regular text-lg text-yellow-700 tracking-wider">
-				<SubHeading />
-			</h2>
-		</header>
+		<>
+			<header className="flex flex-col items-center gap-1 w-full">
+				<h1 className="patrick-hand-sc-regular text-6xl text-yellow-700">
+					Scrapulator
+				</h1>
+				<h2 className="patrick-hand-regular text-lg text-yellow-700 tracking-wider">
+					<SubHeading />
+				</h2>
+			</header>
+			<aside className="w-1/4 self-end">
+				<EditIcon />
+			</aside>
+		</>
 	);
 }
 
@@ -39,4 +45,14 @@ function SubHeading() {
 	});
 
 	return subHeadings[currentSubheadingIndex];
+}
+
+function EditIcon() {
+	return (
+		<img
+			src={editIcon}
+			alt="edit"
+			className="w-7 md:w-9 lg:w-11 cursor-pointer"
+		/>
+	);
 }
