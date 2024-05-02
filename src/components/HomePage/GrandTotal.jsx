@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
+import { ValidateItemsProp } from "./../../propValidations";
 import largeRupeeIcon from "./../../assets/large_rupee.svg";
 import { roundToNearestTenth } from "../../roundToNearestTenth";
 
-GrandTotal.propTypes = {
-	items: PropTypes.array.isRequired,
-};
+GrandTotal.propTypes = ValidateItemsProp;
 
 export default function GrandTotal({ items }) {
 	const totalEarnings = items.reduce(

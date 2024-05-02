@@ -1,15 +1,11 @@
-import PropTypes from "prop-types";
+import {
+	ValidateItemsStateProps,
+	ValidateItemEarningsPerKgProps,
+} from "./../../propValidations";
 import smallRupeeIcon from "./../../assets/small_rupee.svg";
 
-ScrapItems.propTypes = {
-	items: PropTypes.array.isRequired,
-	setItems: PropTypes.func.isRequired,
-};
-
-Item.propTypes = {
-	item: PropTypes.object.isRequired,
-	onHandleItemEarningPerKg: PropTypes.func.isRequired,
-};
+ScrapItems.propTypes = ValidateItemsStateProps;
+Item.propTypes = ValidateItemEarningsPerKgProps;
 
 export default function ScrapItems({ items, setItems }) {
 	function handleItemEarningPerKg(id, amount) {

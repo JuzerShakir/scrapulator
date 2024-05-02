@@ -1,16 +1,12 @@
-import PropTypes from "prop-types";
+import {
+	ValidateItemsStateProps,
+	ValidateItemEarningsProps,
+} from "./../../propValidations";
 import smallRupeeIcon from "./../../assets/small_rupee.svg";
 import { roundToNearestTenth } from "../../roundToNearestTenth";
 
-ScrapItems.propTypes = {
-	items: PropTypes.array.isRequired,
-	setItems: PropTypes.func.isRequired,
-};
-
-Item.propTypes = {
-	item: PropTypes.object.isRequired,
-	onHandleItemEarnings: PropTypes.func.isRequired,
-};
+ScrapItems.propTypes = ValidateItemsStateProps;
+Item.propTypes = ValidateItemEarningsProps;
 
 export default function ScrapItems({ items, setItems }) {
 	function handleItemEarnings(id, weight) {
