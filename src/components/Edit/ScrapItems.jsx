@@ -18,6 +18,7 @@ export default function ScrapItems({ items, setItems }) {
 					? {
 							...item,
 							earningPerKg: amount,
+							earnings: amount * item.weight,
 					  }
 					: item
 			)
