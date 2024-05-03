@@ -14,7 +14,7 @@ export default function GrandTotal({ items }) {
 		<section className="flex">
 			<img src={largeRupeeIcon} alt="rupee icon" />
 			<strong className="patrick-hand-regular text-7xl text-green-800">
-				{totalEarnings}
+				{Math.round(totalEarnings)}
 			</strong>
 		</section>
 	);

@@ -12,13 +12,15 @@ export default function ScrapItems({ items, setItems }) {
 		// rescue against negative values
 		if (amount < 1) return;
 
+		const roundingAmount = Math.round(amount);
+
 		setItems((items) =>
 			items.map((item) =>
 				item.id === id
 					? {
 							...item,
-							earningPerKg: amount,
-							earnings: amount * item.weight,
+							earningPerKg: roundingAmount,
+							earnings: roundingAmount * item.weight,
 					  }
 					: item
 			)
@@ -29,7 +31,7 @@ export default function ScrapItems({ items, setItems }) {
 		<main>
 			<ul
 				id="scrapItems"
-				className="grow flex flex-col justify-center gap-y-5 px-6 mb-24"
+				className="grow flex flex-col justify-center gap-5 px-6 mb-24"
 			>
 				{items.map((item) => (
 					<Item
