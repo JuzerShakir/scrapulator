@@ -2,7 +2,7 @@ import { ValidateItemsStateProps } from "./../propValidations";
 import Header from "./../components/Edit/Header";
 import ScrapItems from "../components/Edit/ScrapItems";
 import Footer from "./../components/Footer";
-import ShowIcon from "../components/ShowIcon";
+import Aside from "./../components/Aside";
 import homeIcon from "./../assets/home.svg";
 
 Edit.propTypes = ValidateItemsStateProps;
@@ -11,7 +11,7 @@ function Edit({ items, setItems }) {
 	return (
 		<>
 			<Header />
-			<ShowIcon icon={homeIcon} alt="home" />
+			<Aside icon={homeIcon} alt="home" />
 			<ScrapItems items={items} setItems={setItems} />
 			<Footer />
 		</>
