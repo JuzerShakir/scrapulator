@@ -10,7 +10,7 @@ Item.propTypes = ValidateItemEarningsPerKgProps;
 export default function ScrapItems({ items, setItems }) {
 	function handleItemEarningPerKg(id, amount) {
 		// rescue against negative values
-		if (amount <= 0) return;
+		if (amount < 1) return;
 
 		setItems((items) =>
 			items.map((item) =>
@@ -66,9 +66,9 @@ function Item({ item, onHandleItemEarningPerKg }) {
 						id={item.name}
 						name={item.name}
 						className="nunito-sans-semibold bg-amber-100 w-10 text-end text-amber-900 pr-1 border-b-2 border-yellow-600 focus:border-yellow-900 focus:outline-none"
-						placeholder={item.earningPerKg}
-						min="0"
-						step="0.1"
+						value={item.earningPerKg}
+						min="1"
+						step="1"
 						onChange={(e) =>
 							onHandleItemEarningPerKg(item.id, Number(e.target.value))
 						}
