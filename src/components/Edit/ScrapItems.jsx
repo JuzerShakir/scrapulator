@@ -29,7 +29,7 @@ export default function ScrapItems({ items, setItems }) {
 		<main>
 			<ul
 				id="scrapItems"
-				className="grow flex flex-col justify-center gap-7 px-6"
+				className="grow flex flex-col justify-center gap-5 px-6"
 			>
 				{items.map((item) => (
 					<Item
@@ -59,13 +59,17 @@ function Item({ item, onHandleItemEarningPerKg }) {
 				</label>
 
 				{/* weight input */}
-				<span className="flex gap-x-1">
-					<img src={smallRupeeIcon} className="h-5" alt="rupee icon" />
+				<span className="flex gap-x-1 items-end">
+					<img
+						src={smallRupeeIcon}
+						className="h-5 self-center"
+						alt="rupee icon"
+					/>
 					<input
 						type="number"
 						id={item.name}
 						name={item.name}
-						className="nunito-sans-semibold bg-amber-100 w-10 text-end text-amber-900 pr-1 border-b-2 border-yellow-600 focus:border-yellow-900 focus:outline-none"
+						className="nunito-sans-semibold bg-amber-100 w-14 text-end text-amber-900 pr-1 border-b-2 border-yellow-600 focus:border-yellow-900 focus:outline-none"
 						value={item.earningPerKg}
 						min="1"
 						step="1"
