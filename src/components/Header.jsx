@@ -1,27 +1,21 @@
 import { useState, useEffect } from "react";
 
-export default function Header() {
+export default function Header({ title, subHeadings }) {
 	return (
 		<>
 			<header className="flex flex-col items-center gap-1 w-full">
 				<h1 className="patrick-hand-sc-regular text-6xl text-yellow-700">
-					Scrapulator
+					{title}
 				</h1>
 				<h2 className="patrick-hand-regular text-lg text-yellow-700 tracking-wider">
-					<SubHeading />
+					<SubHeading subHeadings={subHeadings} />
 				</h2>
 			</header>
 		</>
 	);
 }
 
-function SubHeading() {
-	const subHeadings = [
-		"Scrap calculations made easy",
-		"Scrap value at your fingertips",
-		"Calculate your scrap, calculate your earnings",
-	];
-
+function SubHeading({ subHeadings }) {
 	const [currentSubheadingIndex, setCurrentSubheadingIndex] = useState(0);
 
 	// Function to cycle through subheadings
@@ -31,11 +25,10 @@ function SubHeading() {
 		);
 	};
 
-	// Change subheading every 5 seconds
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			changeSubheading();
-		}, 5000); // Change subheading every 5 seconds
+		}, 2500); // Change subheading every 2.5 seconds
 
 		return () => clearInterval(intervalId);
 	});
