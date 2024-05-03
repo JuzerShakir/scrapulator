@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import { ValidateHeaderProps } from "./../propValidations";
+
+Header.propTypes = ValidateHeaderProps;
 
 export default function Header({ title, subHeadings }) {
 	return (

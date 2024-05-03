@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { ValidateAsideProps } from "./../propValidations";
+
+Aside.propTypes = ValidateAsideProps;
 
 export default function Aside({ icon, alt, linkTo }) {
 	return (
