@@ -11,7 +11,7 @@ function Edit({ items, setItems }) {
 	return (
 		<>
 			<Header />
-			<Aside icon={homeIcon} alt="home" />
+			<Aside icon={homeIcon} alt="home" linkTo="/" />
 			<ScrapItems items={items} setItems={setItems} />
 			<Footer />
 		</>

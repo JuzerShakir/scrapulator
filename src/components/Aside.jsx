@@ -1,7 +1,11 @@
-export default function Aside({ icon, alt }) {
+import { Link } from "react-router-dom";
+
+export default function Aside({ icon, alt, linkTo }) {
 	return (
 		<aside className="w-1/4 self-end">
-			<img src={icon} alt={alt} className="w-7 md:w-9 cursor-pointer" />
+			<Link to={linkTo}>
+				<img src={icon} alt={alt} className="w-7 md:w-9 cursor-pointer" />
+			</Link>
 		</aside>
 	);
 }

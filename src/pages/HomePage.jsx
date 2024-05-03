@@ -12,7 +12,7 @@ function HomePage({ items, setItems }) {
 	return (
 		<>
 			<Header />
-			<Aside icon={editIcon} alt="edit" />
+			<Aside icon={editIcon} alt="edit" linkTo="edit" />
 			<ScrapItems items={items} setItems={setItems} />
 			<GrandTotal items={items} />
 			<Footer />
