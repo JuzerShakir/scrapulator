@@ -19,6 +19,7 @@ export default function ScrapItems({ items, setItems }) {
 					? {
 							...item,
 							earnings: roundToNearestTenth(weight * item.earningPerKg),
+							weight: Number(weight),
 					  }
 					: item
 			)
