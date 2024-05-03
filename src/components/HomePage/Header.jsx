@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import ShowIcon from "../ShowIcon";
-import editIcon from "./../../assets/edit.svg";
 
 export default function Header() {
 	return (
@@ -13,7 +11,6 @@ export default function Header() {
 					<SubHeading />
 				</h2>
 			</header>
-			<aside className="w-1/4 self-end">{ShowIcon(editIcon, "edit")}</aside>
 		</>
 	);
 }

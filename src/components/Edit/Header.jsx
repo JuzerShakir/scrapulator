@@ -1,6 +1,3 @@
-import ShowIcon from "../ShowIcon";
-import homeIcon from "./../../assets/home.svg";
-
 export default function Header() {
 	return (
 		<>
@@ -9,7 +6,6 @@ export default function Header() {
 					Edit Price
 				</h1>
 			</header>
-			<aside className="w-1/4 self-end">{ShowIcon(homeIcon, "home")}</aside>
 		</>
 	);
 }
