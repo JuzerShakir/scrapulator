@@ -29,7 +29,7 @@ export default function ScrapItems({ items, setItems }) {
 		<main>
 			<ul
 				id="scrapItems"
-				className="grow flex flex-col justify-center gap-5 px-6"
+				className="grow flex flex-col justify-center gap-y-5 px-6 mb-24"
 			>
 				{items.map((item) => (
 					<Item
@@ -47,7 +47,7 @@ function Item({ item, onHandleItemEarningPerKg }) {
 	return (
 		<li className="flex justify-end">
 			<form
-				className="flex items-center gap-9"
+				className="flex items-center gap-x-12"
 				onSubmit={(e) => e.preventDefault()}
 			>
 				{/* title */}
