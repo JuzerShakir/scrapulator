@@ -72,7 +72,7 @@ function Item({ item, onHandleItemEarningPerKg }) {
 						id={item.name}
 						name={item.name}
 						className="nunito-sans-semibold bg-amber-100 w-14 text-end text-amber-900 pr-1 border-b-2 border-yellow-600 focus:border-yellow-900 focus:outline-none"
-						value={item.earningPerKg}
+						placeholder={item.earningPerKg}
 						min="1"
 						step="1"
 						onChange={(e) =>
