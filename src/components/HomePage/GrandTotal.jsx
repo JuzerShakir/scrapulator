@@ -1,12 +1,12 @@
 import { ValidateItemsProp } from "./../../propValidations";
 import largeRupeeIcon from "./../../assets/large_rupee.svg";
-import { roundToNearestTenth } from "../../roundToNearestTenth";
+import { roundToNearestPlace } from "../../roundToNearestPlace";
 
 GrandTotal.propTypes = ValidateItemsProp;
 
 export default function GrandTotal({ items }) {
 	const totalEarnings = items.reduce(
-		(accumulator, item) => roundToNearestTenth(accumulator + item.earnings),
+		(accumulator, item) => roundToNearestPlace(accumulator + item.earnings),
 		0
 	);
 

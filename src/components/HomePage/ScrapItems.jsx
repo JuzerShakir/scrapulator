@@ -3,7 +3,7 @@ import {
 	ValidateItemEarningsProps,
 } from "./../../propValidations";
 import smallRupeeIcon from "./../../assets/small_rupee.svg";
-import { roundToNearestTenth } from "../../roundToNearestTenth";
+import { roundToNearestPlace } from "../../roundToNearestPlace";
 
 ScrapItems.propTypes = ValidateItemsStateProps;
 Item.propTypes = ValidateItemEarningsProps;
@@ -18,7 +18,7 @@ export default function ScrapItems({ items, setItems }) {
 				item.id === id
 					? {
 							...item,
-							earnings: roundToNearestTenth(weight * item.earningPerKg),
+							earnings: roundToNearestPlace(weight * item.earningPerKg),
 							weight: Number(weight),
 					  }
 					: item
