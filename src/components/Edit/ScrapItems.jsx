@@ -31,7 +31,7 @@ export default function ScrapItems({ items, setItems }) {
 		<main>
 			<ul
 				id="scrapItems"
-				className="grow flex flex-col justify-center gap-5 px-6 mb-24"
+				className="grow flex flex-col justify-center gap-5 px-6"
 			>
 				{items.map((item) => (
 					<Item
