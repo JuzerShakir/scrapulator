@@ -1,9 +1,9 @@
 import {
 	ValidateItemsStateProps,
 	ValidateItemEarningsProps,
-} from "../../propValidations";
-import smallRupeeIcon from "./../../assets/small_rupee.svg";
-import { roundToNearestPlace } from "../../roundToNearestPlace";
+} from "../propValidations";
+import smallRupeeIcon from "../assets/small_rupee.svg";
+import roundToNearestPlace from "../roundToNearestPlace";
 
 ScrapItemsEarning.propTypes = ValidateItemsStateProps;
 Item.propTypes = ValidateItemEarningsProps;

@@ -1,6 +1,6 @@
-import { ValidateItemsProp } from "./../../propValidations";
-import largeRupeeIcon from "./../../assets/large_rupee.svg";
-import { roundToNearestPlace } from "../../roundToNearestPlace";
+import { ValidateItemsProp } from "../propValidations";
+import largeRupeeIcon from "../assets/large_rupee.svg";
+import roundToNearestPlace from "../roundToNearestPlace";
 
 GrandTotal.propTypes = ValidateItemsProp;
 

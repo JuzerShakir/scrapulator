@@ -1,8 +1,8 @@
 import {
 	ValidateItemsStateProps,
 	ValidateItemEarningsPerKgProps,
-} from "../../propValidations";
-import smallRupeeIcon from "./../../assets/small_rupee.svg";
+} from "../propValidations";
+import smallRupeeIcon from "../assets/small_rupee.svg";
 
 ScrapItemsEditEarning.propTypes = ValidateItemsStateProps;
 Item.propTypes = ValidateItemEarningsPerKgProps;

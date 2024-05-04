@@ -1,10 +1,10 @@
 import { ValidateItemsStateProps } from "../propValidations";
 import Header from "../components/Header";
-import ScrapItems from "./../components/HomePage/ScrapItems";
-import GrandTotal from "./../components/HomePage/GrandTotal";
-import Footer from "./../components/Footer";
 import Aside from "../components/Aside";
 import editIcon from "./../assets/edit.svg";
+import ScrapItemsEarning from "../components/ScrapItemsEarning";
+import GrandTotal from "./../components/GrandTotal";
+import Footer from "./../components/Footer";
 
 HomePage.propTypes = ValidateItemsStateProps;
 
