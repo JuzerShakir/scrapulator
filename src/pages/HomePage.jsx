@@ -19,7 +19,7 @@ function HomePage({ items, setItems }) {
 		<>
 			<Header title="Scrapulator" subHeadings={subHeadings} />
 			<Aside icon={editIcon} alt="edit" linkTo="edit" />
-			<ScrapItems items={items} setItems={setItems} />
+			<ScrapItemsEarning items={items} setItems={setItems} />
 			<GrandTotal items={items} />
 			<Footer />
 		</>

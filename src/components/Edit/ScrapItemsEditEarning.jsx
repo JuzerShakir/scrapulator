@@ -1,13 +1,13 @@
 import {
 	ValidateItemsStateProps,
 	ValidateItemEarningsPerKgProps,
-} from "./../../propValidations";
+} from "../../propValidations";
 import smallRupeeIcon from "./../../assets/small_rupee.svg";
 
-ScrapItems.propTypes = ValidateItemsStateProps;
+ScrapItemsEditEarning.propTypes = ValidateItemsStateProps;
 Item.propTypes = ValidateItemEarningsPerKgProps;
 
-export default function ScrapItems({ items, setItems }) {
+export default function ScrapItemsEditEarning({ items, setItems }) {
 	function handleItemEarningPerKg(id, amount) {
 		// rescue against negative values
 		if (amount < 1) return;

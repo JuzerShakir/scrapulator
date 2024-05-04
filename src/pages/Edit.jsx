@@ -15,7 +15,7 @@ function Edit({ items, setItems }) {
 		<>
 			<Header title="Edit Price" subHeadings={subHeadings} />
 			<Aside icon={homeIcon} alt="home" linkTo="/" />
-			<ScrapItems items={items} setItems={setItems} />
+			<ScrapItemsEditEarning items={items} setItems={setItems} />
 			<GrandTotal items={items} />
 			<Footer />
 		</>
