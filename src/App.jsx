@@ -1,57 +1,27 @@
 import { useState } from "react";
-// import assets
-// import editIcon from "./assets/edit.svg";
-// import homeIcon from "./assets/home.svg";
-// components
-import Header from "./components/Header";
-import ScrapItems from "./components/ScrapItems";
-import GrandTotal from "./components/GrandTotal";
-import Footer from "./components/Footer";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { scrapItemsList } from "./scrapItemsList";
 
-const scrapItems = [
-	{ id: 1, name: "plastic", earningPerKg: 15, earnings: 0 },
-	{ id: 2, name: "cardboard", earningPerKg: 8, earnings: 0 },
-	{ id: 3, name: "paper", earningPerKg: 10, earnings: 0 },
-	{ id: 4, name: "steel", earningPerKg: 40, earnings: 0 },
-	{ id: 5, name: "iron", earningPerKg: 30, earnings: 0 },
-	{ id: 6, name: "german", earningPerKg: 120, earnings: 0 },
-];
-
-function roundToNearestTenth(number) {
-	return Math.round(number * 10) / 10;
-}
+// pages
+import HomePage from "./pages/HomePage";
+import Edit from "./pages/Edit";
 
 function App() {
-	const [items, setItems] = useState(scrapItems);
-	const newTotalEarnings = items.reduce(
-		(accumulator, item) => roundToNearestTenth(accumulator + item.earnings),
-		0
-	);
+	const [items, setItems] = useState(scrapItemsList);
 
-	function handleItemEarnings(id, weight) {
-		// rescue against negative values
-		if (weight < 0) return;
+	// routing
+	const router = createBrowserRouter([
+		{
+			path: "/",
+			element: <HomePage items={items} setItems={setItems} />,
+		},
+		{
+			path: "/edit",
+			element: <Edit items={items} setItems={setItems} />,
+		},
+	]);
 
-		setItems((items) =>
-			items.map((item) =>
-				item.id === id
-					? {
-							...item,
-							earnings: roundToNearestTenth(weight * item.earningPerKg),
-					  }
-					: item
-			)
-		);
-	}
-
-	return (
-		<>
-			<Header />
-			<ScrapItems items={items} onHandleItemEarnings={handleItemEarnings} />
-			<GrandTotal totalEarnings={newTotalEarnings} />
-			<Footer />
-		</>
-	);
+	return <RouterProvider router={router} />;
 }
 
 export default App;
