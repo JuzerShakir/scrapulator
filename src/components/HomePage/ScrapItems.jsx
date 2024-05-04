@@ -46,7 +46,7 @@ export default function ScrapItems({ items, setItems }) {
 
 function Item({ item, onHandleItemEarnings }) {
 	return (
-		<li className="flex justify-end gap-7">
+		<li className="flex justify-end gap-x-7">
 			<form className="flex gap-7" onSubmit={(e) => e.preventDefault()}>
 				{/* title */}
 				<label

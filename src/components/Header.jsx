@@ -6,11 +6,11 @@ Header.propTypes = ValidateHeaderProps;
 export default function Header({ title, subHeadings }) {
 	return (
 		<>
-			<header className="flex flex-col items-center gap-1 w-full">
+			<header className="flex flex-col items-center gap-4 w-full">
 				<h1 className="patrick-hand-sc-regular text-6xl text-yellow-700">
 					{title}
 				</h1>
-				<h2 className="patrick-hand-regular text-lg text-yellow-700 tracking-wider">
+				<h2 className="patrick-hand-regular text-xl text-center text-yellow-700 tracking-wider">
 					<SubHeading subHeadings={subHeadings} />
 				</h2>
 			</header>
